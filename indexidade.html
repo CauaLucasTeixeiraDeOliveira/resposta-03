@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Idade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 300px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin: 0 0 10px;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+            margin: 0 0 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificação de Idade</h1>
+        <p id="mensagem">Clique no botão para verificar sua idade.</p>
+        <button onclick="verificarIdade()">Verificar Idade</button>
+    </div>
+
+    <script>
+        function verificarIdade() {
+            var idade = prompt("Por favor, informe a sua idade:");
+            if (idade !== null) {
+                idade = parseInt(idade); // Converter a idade para um número inteiro
+                if (!isNaN(idade)) {
+                    if (idade >= 18) {
+                        document.getElementById("mensagem").innerHTML = "Você tem " + idade + " anos  e é maior de idade!!";
+                    } else {
+                        document.getElementById("mensagem").innerHTML = "Você tem " + idade + " anos e é menor de idade!";
+                    }
+                } else {
+                    document.getElementById("mensagem").innerHTML = "Por favor, insira um número válido.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
